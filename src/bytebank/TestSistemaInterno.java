@@ -10,5 +10,4 @@ public class TestSistemaInterno {
 		sistema.autentica(gerente1);
 		sistema.autentica(admin);
 	}
-
 }

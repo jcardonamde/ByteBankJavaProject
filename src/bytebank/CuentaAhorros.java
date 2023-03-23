@@ -6,10 +6,9 @@ public class CuentaAhorros extends Cuenta {
 		super(agencia, numero);
 	}
 
-	// Implementado por la abstracción
+	// Implemented by abstraction
 	@Override
 	public void depositar(double valor) {
 		this.saldo += valor;
 	}
-
 }

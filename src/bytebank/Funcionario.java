@@ -1,7 +1,7 @@
 package bytebank;
 
-// Una clase abstract no puede ser instanciada porque es una representación conceptual mas no fisica.
-// Para crear una instancia, es necesario crear primero una clase hija no abstracta.
+// An abstract class cann't be instantiated because it is a conceptual representation but not a physical one.
+// To create an instance, it is necessary to first create a non-abstract child class.
 public abstract class Funcionario {
 
 	private String nombre;
@@ -38,9 +38,9 @@ public abstract class Funcionario {
 		this.salario = salario;
 	}
 
-//	public double getBonificacion() {
-//		return this.salario * 0.05;
-//	}
+	//public double getBonificacion() {
+	//	return this.salario * 0.05;
+	//}
 
 	// An abstract method has no body, it only define the sign(visibility, return, method name and parameters).
 	public abstract double getBonificacion();

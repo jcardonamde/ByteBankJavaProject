@@ -23,13 +23,12 @@ public class Administrador extends Funcionario implements Autenticable {
 		return this.util.iniciarSesion(clave);
 	}
 
-//	private String clave;
-//
-//	public void setClave(String clave) {
-//		this.clave = clave;
-//	}
-//
-//	public boolean iniciarSesion(String clave) {
-//		return clave == "AluraCursosOnLine";
-//	}
+	/*
+	 * private String clave;
+	 * 
+	 * public void setClave(String clave) { this.clave = clave; }
+	 * 
+	 * public boolean iniciarSesion(String clave) { return clave ==
+	 * "AluraCursosOnLine"; }
+	 */
 }

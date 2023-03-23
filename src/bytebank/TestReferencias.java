@@ -17,5 +17,4 @@ public class TestReferencias {
 		gerente.iniciarSesion("_dddd");
 
 	}
-
 }

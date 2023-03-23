@@ -1,6 +1,5 @@
 package bytebank;
 
-
 public class CuentaCorriente extends Cuenta {
 
 	// Constructor for default
@@ -18,6 +17,6 @@ public class CuentaCorriente extends Cuenta {
 
 	@Override
 	public void depositar(double valor) {
-		
+
 	}
 }

@@ -18,7 +18,7 @@ public abstract class Cuenta {
 
 	}
 
-	// Los constructores no se heredan
+	// The constructors don't inheriting
 	public Cuenta(int agencia, int numero) {
 		this.agencia = agencia;
 		this.numero = numero;
@@ -35,23 +35,17 @@ public abstract class Cuenta {
 		if (this.saldo < valor) {
 			throw new SaldoInsuficienteException("Valor invalido: Saldo: " + this.saldo + ", Valor: " + valor);
 		}
-		this.saldo -= valor;	
+		this.saldo -= valor;
 	}
 
 	public void transferir(double valor, Cuenta cuenta) throws SaldoInsuficienteException {
-//		if (this.saldo >= valor) {
-//			try {
-//				this.retirar(valor);
-//			} catch (SaldoInsuficienteException e) {
-//				e.printStackTrace();
-//			}
-//			cuenta.depositar(valor);
-//			return true;
-//		} else {
-//			return false;
-//		}
 		this.retirar(valor);
 		cuenta.depositar(valor);
+		/*
+		 * if (this.saldo >= valor) { try { this.retirar(valor); } catch
+		 * (SaldoInsuficienteException e) { e.printStackTrace(); }
+		 * cuenta.depositar(valor); return true; } else { return false; }
+		 */
 	}
 
 	public double getSaldo() {
@@ -61,39 +55,40 @@ public abstract class Cuenta {
 	public int getAgencia() {
 		return agencia;
 	}
-	
+
 	public void setAgencia(int agencia) {
-        if (agencia > 0) {
-            this.agencia = agencia;
-        }
-    }
-	
+		if (agencia > 0) {
+			this.agencia = agencia;
+		}
+	}
+
 	public int getNumero() {
-        return numero;
-    }
+		return numero;
+	}
 
-    public void setNumero(int numero) {
-        if (numero > 0) {
-            this.numero = numero;
-        }
-    }
+	public void setNumero(int numero) {
+		if (numero > 0) {
+			this.numero = numero;
+		}
+	}
 
-    public Cliente getTitular() {
-        return titular;
-    }
+	public Cliente getTitular() {
+		return titular;
+	}
 
-    public void setTitular(Cliente titular) {
-        this.titular = titular;
-    }
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
 
-    public static int getTotal() {
-        return Cuenta.total;
-    }
+	public static int getTotal() {
+		return Cuenta.total;
+	}
 
-////Define Method for Deposit Account
-//public void depositar(double valor) {
-//	// Void is a method that no return nothing
-//	this.saldo += valor;
-//}
-
+	//Define Method for Deposit Account
+	/*
+	public void depositar(double valor) {
+		// Void is a method that no return nothing
+		this.saldo += valor;
+	}
+	*/
 }

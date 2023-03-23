@@ -13,5 +13,4 @@ public class TestFuncionario {
 		System.out.println(yoto.getSalario());
 		System.out.println(yoto.getBonificacion());
 	}
-
 }
