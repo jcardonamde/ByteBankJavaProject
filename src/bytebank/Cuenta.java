@@ -13,6 +13,7 @@ public abstract class Cuenta {
 	// This variable is not the instance is for the Class
 	private static int total = 0;
 
+	// Constructor for default
 	public Cuenta() {
 
 	}
@@ -30,23 +31,27 @@ public abstract class Cuenta {
 	public abstract void depositar(double valor);
 
 	// This method return a value
-	public boolean retirar(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			return false;
+	public void retirar(double valor) throws SaldoInsuficienteException {
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Valor invalido: Saldo: " + this.saldo + ", Valor: " + valor);
 		}
+		this.saldo -= valor;	
 	}
 
-	public boolean transferir(double valor, Cuenta cuenta) {
-		if (this.saldo >= valor) {
-			this.retirar(valor);
-			cuenta.depositar(valor);
-			return true;
-		} else {
-			return false;
-		}
+	public void transferir(double valor, Cuenta cuenta) throws SaldoInsuficienteException {
+//		if (this.saldo >= valor) {
+//			try {
+//				this.retirar(valor);
+//			} catch (SaldoInsuficienteException e) {
+//				e.printStackTrace();
+//			}
+//			cuenta.depositar(valor);
+//			return true;
+//		} else {
+//			return false;
+//		}
+		this.retirar(valor);
+		cuenta.depositar(valor);
 	}
 
 	public double getSaldo() {
